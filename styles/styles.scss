@@ -120,6 +120,15 @@ a:active {
       }
     }
   }
+
+  @include mobile {
+    padding: 0.5rem 0.75rem;
+
+    .tk-announcement-content a {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
 }
 
 .content {
@@ -175,12 +184,14 @@ a:active {
       left: 0;
       right: 0;
 
-      transition: transform 0.2s ease-in-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
     }
     .navbar-menu.is-active {
       opacity: 1;
       transform: translateY(100%);
-      transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
       pointer-events: auto;
     }
     .navbar-end {
